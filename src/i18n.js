@@ -1,0 +1,147 @@
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+
+const resources = {
+    en: {
+        translation: {
+            "nav.home": "Home",
+            "nav.about": "About Us",
+            "nav.locations": "Locations",
+            "nav.menu": "Menu Highlights",
+            "hero.title": "Authentic Handmade Pasta in Rome",
+            "hero.subtitle": "Welcome to Pastamore. Enjoy fresh, homemade pasta, friendly service, and great value near Rome's top tourist hotspots.",
+            "hero.cta": "Find a Location",
+            "about.title": "Our Story",
+            "about.desc": "Pastamore is a popular pasta-focused restaurant chain in Rome spreading the love of authentic Italian dishes. Whether you want to dine-in in a historic piazza or grab Artisan products for home, we have you covered.",
+            "about.story_p1": "Born from a passion for traditional Roman cuisine, Pastamore started as a small kitchen in the heart of Trastevere. Our founders, two brothers who grew up learning the secrets of fresh pasta from their grandmother, wanted to share the true taste of Sunday family lunches with everyone.",
+            "about.story_p2": "Today, we painstakingly source the best local ingredients—from farm-fresh eggs for our carbonara to the finest pecorino romano. Every dish we serve is a tribute to Rome, served with a smile and the energetic, welcoming spirit our staff is known for.",
+            "book.title": "Book a Table",
+            "book.thefork": "Book on TheFork",
+            "book.phone": "Call Us",
+            "locations.title": "Our Locations",
+            "locations.trastevere.title": "Trastevere",
+            "locations.trastevere.desc": "Piazza della Scala 56. Originally offering dine-in pasta, pizza, and a lively atmosphere in a historic piazza. Try our creative dishes like pasta with beetroot hearts.",
+            "locations.borgo_pio.title": "Borgo Pio (Vatican area)",
+            "locations.borgo_pio.desc": "Borgo Pio 34. Focuses on delivery, takeout, and artisan products for home cooking, ideal before San Pietro visits.",
+            "locations.prenestina.title": "Prenestina",
+            "locations.prenestina.desc": "Cozy vibes and fair prices. Another outpost with homemade pasta like carbonara and friarielli tortino.",
+            "menu.title": "Menu Highlights",
+            "menu.fresh_pasta": "Fresh Pasta",
+            "menu.fresh_pasta.desc": "Tonnarelli cacio e pepe, aglio e olio, and ravioli.",
+            "menu.specials": "Specials",
+            "menu.specials.desc": "Spigola with zucchini flowers (€13) and affordable antipasti like fried anchovies (€7).",
+            "menu.desserts": "Vegan & Desserts",
+            "menu.desserts.desc": "Delicious vegan choices and homemade tiramisù.",
+            "reviews.title": "What Our Guests Say",
+            "reviews.1.text": "\"Amazing quality pasta, energetic staff (shoutouts to Eric, Leonardo, Mattia), and great value in touristy areas!\"",
+            "reviews.1.author": "- Sarah J.",
+            "reviews.1.source": "Tripadvisor",
+            "reviews.2.text": "\"Best cacio e pepe I had in Rome. The atmosphere in Trastevere was exactly what we were looking for. Highly recommend!\"",
+            "reviews.2.author": "- Michael T.",
+            "reviews.2.source": "Google",
+            "reviews.3.text": "\"We stopped by Borgo Pio before visiting the Vatican. The artisan pasta we bought to take home was incredible.\"",
+            "reviews.3.author": "- Elena R.",
+            "reviews.3.source": "Google",
+            "footer.copyright": "© 2026 Pastamore. All rights reserved."
+        }
+    },
+    it: {
+        translation: {
+            "nav.home": "Home",
+            "nav.about": "Chi Siamo",
+            "nav.locations": "Sedi",
+            "nav.menu": "Il Menu",
+            "hero.title": "Autentica Pasta Fatta a Mano a Roma",
+            "hero.subtitle": "Benvenuti da Pastamore. Gusta la pasta fresca artigianale, un servizio cordiale e un ottimo rapporto qualità-prezzo vicino alle principali attrazioni di Roma.",
+            "hero.cta": "Trova una Sede",
+            "about.title": "La Nostra Storia",
+            "about.desc": "Pastamore è una nota catena di ristoranti a Roma specializzata in pasta. Offriamo piatti italiani autentici, sia per consumazioni sul posto in piazze storiche, sia con prodotti artigianali da portare a casa.",
+            "about.story_p1": "Nato dalla passione per la cucina tradizionale romana, Pastamore è nato come piccola cucina nel cuore di Trastevere. I nostri fondatori, due fratelli cresciuti imparando i segreti della pasta fresca dalla nonna, volevano condividere con tutti il vero sapore dei pranzi domenicali in famiglia.",
+            "about.story_p2": "Oggi selezioniamo con cura i migliori ingredienti locali, dalle uova fresche di fattoria per la nostra carbonara al prelibato pecorino romano. Ogni piatto che serviamo è un omaggio a Roma, servito con un sorriso e lo spirito energico e accogliente che contraddistingue il nostro staff.",
+            "book.title": "Prenota un Tavolo",
+            "book.thefork": "Prenota su TheFork",
+            "book.phone": "Chiamaci",
+            "locations.title": "Le Nostre Sedi",
+            "locations.trastevere.title": "Trastevere",
+            "locations.trastevere.desc": "Piazza della Scala 56. Atmosfera vivace in una piazza storica. Prova i nostri piatti creativi come la pasta con cuori di barbabietola.",
+            "locations.borgo_pio.title": "Borgo Pio (Vaticano)",
+            "locations.borgo_pio.desc": "Borgo Pio 34. Consegna a domicilio, asporto e prodotti artigianali da cucinare a casa, l'ideale prima di visitare San Pietro.",
+            "locations.prenestina.title": "Prenestina",
+            "locations.prenestina.desc": "Atmosfera accogliente e prezzi giusti. Un'altra sede con pasta fatta in casa come carbonara e tortino di friarielli.",
+            "menu.title": "I Nostri Piatti Forti",
+            "menu.fresh_pasta": "Pasta Fresca",
+            "menu.fresh_pasta.desc": "Tonnarelli cacio e pepe, aglio e olio, e ravioli.",
+            "menu.specials": "Specialità",
+            "menu.specials.desc": "Spigola con fiori di zucca (€13) e antipasti come alici fritte (€7).",
+            "menu.desserts": "Vegano & Dolci",
+            "menu.desserts.desc": "Deliziose opzioni vegane e tiramisù fatto in casa.",
+            "reviews.title": "Cosa Dicono i Nostri Ospiti",
+            "reviews.1.text": "\"Pasta di ottima qualità, personale energico (un ringraziamento speciale a Eric, Leonardo, Mattia) e prezzi giusti nelle aree turistiche!\"",
+            "reviews.1.author": "- Sarah J.",
+            "reviews.1.source": "Tripadvisor",
+            "reviews.2.text": "\"La migliore cacio e pepe che abbia mai mangiato a Roma. L'atmosfera a Trastevere era esattamente quello che cercavamo. Consigliatissimo!\"",
+            "reviews.2.author": "- Michael T.",
+            "reviews.2.source": "Google",
+            "reviews.3.text": "\"Ci siamo fermati a Borgo Pio prima di visitare il Vaticano. La pasta artigianale che abbiamo comprato da portare a casa era incredibile.\"",
+            "reviews.3.author": "- Elena R.",
+            "reviews.3.source": "Google",
+            "footer.copyright": "© 2026 Pastamore. Tutti i diritti riservati."
+        }
+    },
+    ru: {
+        translation: {
+            "nav.home": "Главная",
+            "nav.about": "О нас",
+            "nav.locations": "Заведения",
+            "nav.menu": "Меню",
+            "hero.title": "Настоящая домашняя паста в Риме",
+            "hero.subtitle": "Добро пожаловать в Pastamore. Наслаждайтесь свежей пастой, приветливым обслуживанием и отличными ценами возле главных достопримечательностей Рима.",
+            "hero.cta": "Найти заведение",
+            "about.title": "Наша история",
+            "about.desc": "Pastamore — это популярная сеть ресторанов в Риме, специализирующаяся на пасте. Мы предлагаем аутентичные итальянские блюда: от ужина на исторической площади до продуктов для домашней кухни.",
+            "about.story_p1": "Родившийся из страсти к традиционной римской кухне, Pastamore начинался как небольшая кухня в самом сердце Трастевере. Наши основатели, два брата, выросшие на секретах свежей пасты от своей бабушки, хотели поделиться истинным вкусом воскресных семейных обедов со всеми.",
+            "about.story_p2": "Сегодня мы тщательно отбираем лучшие местные ингредиенты — от свежих фермерских яиц для нашей карбонары до лучшего пекорино романо. Каждое наше блюдо — это дань уважения Риму, подаваемое с улыбкой и энергичным, гостеприимным духом, которым славится наш персонал.",
+            "book.title": "Забронировать столик",
+            "book.thefork": "Бронь на TheFork",
+            "book.phone": "Позвонить нам",
+            "locations.title": "Наши заведения",
+            "locations.trastevere.title": "Трастевере",
+            "locations.trastevere.desc": "Piazza della Scala 56. Оживленная атмосфера на исторической площади. Попробуйте креативные блюда, например пасту с сердечками из свеклы.",
+            "locations.borgo_pio.title": "Борго Пио (Ватикан)",
+            "locations.borgo_pio.desc": "Borgo Pio 34. Доставка, еда на вынос и домашние продукты, идеально перед посещением Сан-Пьетро.",
+            "locations.prenestina.title": "Пренестина",
+            "locations.prenestina.desc": "Уютная атмосфера и честные цены. Еще одно место, где подают домашнюю пасту, например карбонару и тортино из фриарелли.",
+            "menu.title": "Особенности меню",
+            "menu.fresh_pasta": "Свежая паста",
+            "menu.fresh_pasta.desc": "Тоннарелли качо э пепе, алио э олио и равиоли.",
+            "menu.specials": "Специальные блюда",
+            "menu.specials.desc": "Сибас с цветками цуккини (13 евро) и недорогие закуски, такие как жареные анчоусы (7 евро).",
+            "menu.desserts": "Веганские блюда и десерты",
+            "menu.desserts.desc": "Вкуснейшие веганские блюда и домашний тирамису.",
+            "reviews.title": "Отзывы наших гостей",
+            "reviews.1.text": "\"Потрясающая паста, энергичный персонал (спасибо Эрику, Леонардо, Маттии) и отличное качество в туристических зонах!\"",
+            "reviews.1.author": "- Сара Дж.",
+            "reviews.1.source": "Tripadvisor",
+            "reviews.2.text": "\"Лучшая качо э пепе в Риме. Атмосфера в Трастевере — это именно то, что мы искали. Очень рекомендую!\"",
+            "reviews.2.author": "- Майкл Т.",
+            "reviews.2.source": "Google",
+            "reviews.3.text": "\"Мы зашли в Борго Пио перед посещением Ватикана. Ремесленная паста, которую мы взяли домой, была невероятной.\"",
+            "reviews.3.author": "- Елена Р.",
+            "reviews.3.source": "Google",
+            "footer.copyright": "© 2026 Pastamore. Все права защищены."
+        }
+    }
+};
+
+i18n
+    .use(initReactI18next)
+    .init({
+        resources,
+        lng: "en",
+        fallbackLng: "en",
+        interpolation: {
+            escapeValue: false
+        }
+    });
+
+export default i18n;
